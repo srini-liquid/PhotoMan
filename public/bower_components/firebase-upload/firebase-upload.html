@@ -124,18 +124,19 @@ Example:
       reader.onload = (function(f) {
         return function(e) {
           var filePayload = e.target.result;
-          //var firebase = new Firebase("https://photoman-ede9e.firebaseio.com");
+
           var storageRef = firebase.storage().ref();
-          storageRef.child('images/' + f.name).put(filePayload, metadata).then(function(snapshot) {
-        console.log('Uploaded', snapshot.totalBytes, 'bytes.');
-        console.log(snapshot.metadata);
+          var metadata = {
+                        cacheControl: 'public,max-age=3000'
+                        }
+
+          
+          storageRef.child('images/' + file.name).put(file, metadata).then(function(snapshot) {
+            ready = true;
         var url = snapshot.metadata.downloadURLs[0];
         console.log('File available at', url);
-        // [START_EXCLUDE]
-        document.getElementById('linkbox').innerHTML = '<a href="' +  url + '">Click For File</a>';
-        // [END_EXCLUDE]
       }).catch(function(error) {
-        // [START onfailure]
+        // [START onfailure]  
         console.error('Upload failed:', error);
         // [END onfailure]
       });

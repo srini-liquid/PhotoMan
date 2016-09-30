@@ -1,11 +1,10 @@
 {
-  "name": "note-app",
+  "name": "pm-app",
   "authors": [
-    "The Polymer Authors"
+    "Srini"
   ],
   "version": "0.9.0",
-  "description": "An offline-ready app for taking notes.",
-  "license": "http://polymer.github.io/LICENSE.txt",
+  "description": "Photo Manager App",
   "private": true,
   "dependencies": {
     "platinum-sw": "polymerelements/platinum-sw#^1.3.0",

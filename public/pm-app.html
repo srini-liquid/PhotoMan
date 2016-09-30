@@ -56,14 +56,14 @@
     <pa-note
         id$="[[album.$key]]"
         title="[[album.title]]"
-        body="[[album.body]]">f
+        body="[[album.body]]">
     </pa-note>
   </template>
 </div>
 <firebase-upload
     url="https://photoman-ede9e.firebaseio.com"
     disabled="[[!online]]"
-    hidden="[[!signedIn]]" >
+    hidden="[[!signedIn]]" ></firebase-upload>
   </template>
   <script>
   Polymer({
